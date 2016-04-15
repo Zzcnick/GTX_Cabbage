@@ -1,0 +1,10 @@
+Picture Lab - Questions
+
+1. The numbers from 0 to 255 can be represented using 8 bits, with
+         0 => 00000000
+       255 => 11111111
+
+2. Because each color has R, B and G components, 3 bytes is required to
+   determine a color.
+
+3. 640 x 480 = 307200 pixels
