@@ -1,5 +1,6 @@
 Picture Lab - Questions
 
+Activity 1
 1. The numbers from 0 to 255 can be represented using 8 bits, with
          0 => 00000000
        255 => 11111111
@@ -8,3 +9,7 @@ Picture Lab - Questions
    determine a color.
 
 3. 640 x 480 = 307200 pixels
+
+Activity 7
+1. The loop will execute 10 * 9 = 90 times.
+2. The loop will execute 7 * 16 = 102 times.

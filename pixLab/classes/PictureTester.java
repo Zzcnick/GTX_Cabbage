@@ -35,7 +35,7 @@ public class PictureTester
 	caterpillar.explore();
     }
 
-    /** Method to test MirrorHorizontal */
+    /** Method to test mirrorHorizontal */
     public static void testMirrorHorizontal()
     {
 	Picture caterpillar = new Picture("caterpillar.jpg");
@@ -44,12 +44,21 @@ public class PictureTester
 	caterpillar.explore();
     }
 
-    /** Method to test MirrorHorizontalBotToTop */
+    /** Method to test mirrorHorizontalBotToTop */
     public static void testMirrorHorizontalBotToTop()
     {
 	Picture caterpillar = new Picture("caterpillar.jpg");
 	caterpillar.explore();
-	caterpillar.mirrorHorizontal();
+	caterpillar.mirrorHorizontalBotToTop();
+	caterpillar.explore();
+    }
+    
+    /** Method to test mirrorDiagonal */
+    public static void testMirrorDiagonal()
+    {
+	Picture caterpillar = new Picture("beach.jpg");
+	caterpillar.explore();
+	caterpillar.mirrorDiagonal();
 	caterpillar.explore();
     }
 
@@ -60,6 +69,24 @@ public class PictureTester
 	temple.explore();
 	temple.mirrorTemple();
 	temple.explore();
+    }
+
+    /** Method to test mirrorArms */
+    public static void testMirrorArms()
+    {
+	Picture snowman = new Picture("snowman.jpg");
+	snowman.explore();
+	snowman.mirrorArms();
+	snowman.explore();
+    }
+    
+    /** Method to test mirrorGull */
+    public static void testMirrorGull()
+    {
+	Picture seagull = new Picture("seagull.jpg");
+	seagull.explore();
+	seagull.mirrorGull();
+	seagull.explore();
     }
   
     /** Method to test the collage method */
@@ -95,11 +122,11 @@ public class PictureTester
 	//testMirrorVertical(); // Good
 	//testMirrorVerticalRightToLeft(); // Good
 	//testMirrorHorizontal(); // Good
-	testMirrorHorizontalBotToTop();
-	//testMirrorTemple();
-	//testMirrorArms();
-	//testMirrorGull();
-	//testMirrorDiagonal();
+	//testMirrorHorizontalBotToTop(); // Good
+	//testMirrorTemple(); // Good 
+	//testMirrorArms(); // Good
+	testMirrorGull();
+	//testMirrorDiagonal(); // Good
 	//testCollage();
 	//testCopy();
 	//testEdgeDetection();

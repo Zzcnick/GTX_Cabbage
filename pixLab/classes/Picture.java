@@ -130,7 +130,7 @@ public class Picture extends SimplePicture
 	    } 
     }
 
-    // Exercise A6:1
+    // Exercise A6:1 - Mirror Vertically Right to Left
     public void mirrorVerticalRightToLeft()
     {
 	Pixel[][] pixels = this.getPixels2D();
@@ -157,7 +157,7 @@ public class Picture extends SimplePicture
 	int height = pixels.length;
 	for (int col = 0; col < pixels[0].length; col++)
 	    {
-		for (int row = 0; row < height; row++)
+		for (int row = 0; row < height / 2; row++)
 		    {
 			topPixel = pixels[row][col];
 			botPixel = pixels[height - 1 - row][col];
@@ -175,13 +175,32 @@ public class Picture extends SimplePicture
 	int height = pixels.length;
 	for (int col = 0; col < pixels[0].length; col++)
 	    {
-		for (int row = 0; row < height; row++)
+		for (int row = height - 1; row > height / 2; row--)
 		    {
-			topPixel = pixels[row][col];
-			botPixel = pixels[height - 1 - row][col];
-			botPixel.setColor(topPixel.getColor());
+			botPixel = pixels[row][col];
+			topPixel = pixels[height - 1 - row][col];
+			topPixel.setColor(botPixel.getColor());
 		    }
 	    } 
+    }
+
+    // Exercise A6:4 - Mirror Diagonally from Bottom Left to Top Right
+    public void mirrorDiagonal()
+    {
+	Pixel[][] pixels = this.getPixels2D();
+	int height = pixels.length;
+	int width = pixels[0].length;
+	Pixel pix1 = null;
+	Pixel pix2 = null;
+	for (int row = 0; row < height; row++)
+	    {
+		for (int col = height - 1; col > row; col--)
+		    {
+			pix1 = pixels[row][col];
+			pix2 = pixels[col][row];
+			pix1.setColor(pix2.getColor());
+		    }
+	    }
     }
   
     /** Mirror just part of a picture of a temple */
@@ -204,8 +223,53 @@ public class Picture extends SimplePicture
 			rightPixel = pixels[row]                       
 			    [mirrorPoint - col + mirrorPoint];
 			rightPixel.setColor(leftPixel.getColor());
+			count++;
 		    }
 	    }
+	System.out.println("Loops: " + count);
+    }
+
+    // Exercise A7:2 - Mirror arms of a snowman.
+    public void mirrorArms()
+    {
+	Pixel[][] pixels = this.getPixels2D();
+	Pixel before = null;
+	Pixel after = null;
+
+	// Left Arm - 100, 160 to 170, 190 across x
+	for (int x = 100; x < 170; x++) {
+	    for (int y = 160; y < 190; y++) {
+		before = pixels[380 - y][x]; // Reflect over x
+		after = pixels[y][x];
+		before.setColor(after.getColor());
+	    }
+	}
+
+	// Right Arm - 240, 170 to 290, 180 across x
+	for (int x = 240; x < 290; x++) {
+	    for (int y = 170; y < 190; y++) {
+		before = pixels[380 - y][x]; // Reflect over x
+		after = pixels[y][x];
+		before.setColor(after.getColor());
+	    }
+	}
+    }
+
+    // Exercise A7:3 - Mirroe gull
+    public void mirrorGull()
+    {
+	Pixel[][] pixels = this.getPixels2D();
+	Pixel before = null;
+	Pixel after = null;
+
+	// 230, 230 to 320, 350 across y
+	for (int x = 230; x < 350; x++) {
+	    for (int y = 230; y < 320; y++) {
+		before = pixels[y][700 - x];
+		after = pixels[y][x];
+		before.setColor(after.getColor());
+	    }
+	}
     }
   
     /** copy from the passed fromPic to the
