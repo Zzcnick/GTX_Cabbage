@@ -10,6 +10,29 @@ Activity 1
 
 3. 640 x 480 = 307200 pixels
 
+Activity 2
+1. Red is maximized, Green is lowered to ~44, and Blue is ~217
+2. Red and Green are maximized while blue is lowered to ~77
+3. Red is ~145. Green is minimized. Blue is almost maximized.
+4. White is made with Red Green and Blue maximized.
+
+Activity 3
+1. 0 
+2. 0
+3. 639
+4. 479
+5. increases from top to bottom
+6. increases from left to right
+
+Activity 5
+1. getPixels2D is not in Picture.java
+2. getPixels2D is in SimplePicture.java
+3. It will not compile
+4. It will compile.
+5. It will compile.
+6. It will compile.
+7. It will not compile.
+ 
 Activity 7
 1. The loop will execute 10 * 9 = 90 times.
 2. The loop will execute 7 * 16 = 102 times.
