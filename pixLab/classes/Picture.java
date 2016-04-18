@@ -397,7 +397,7 @@ public class Picture extends SimplePicture
 	/* A9:1
 	Pixel above = null;
 	Pixel below = null;
-	Pixel belowcolor = null;
+	Color belowcolor = null;
 	for ( int col = 0; col < pixels[0].length; col ++){
 	    for ( int row = 0 ; row < pixels.length-1; row++){
 		above = pixels[row][col];
