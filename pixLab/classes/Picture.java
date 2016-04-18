@@ -326,6 +326,31 @@ public class Picture extends SimplePicture
 		    }
 	    }   
     }
+    public void copy(Picture fromPic,
+		     int startRow, int startCol,
+		     int fromStartRow, int fromStartCol,
+		     int fromEndRow, int fromEndCol)
+    {
+	Pixel fromPixel = null;
+	Pixel toPixel = null;
+	Pixel[][] toPixels = this.getPixels2D();
+	Pixel[][] fromPixels = fromPic.getPixels2D();
+	for (int fromRow = fromStartRow, toRow = startRow; 
+	     fromRow < fromEndRow &&
+		 toRow < toPixels.length; 
+	     fromRow++, toRow++)
+	    {
+		for (int fromCol = fromStartCol, toCol = startCol; 
+		     fromCol < fromEndCol &&
+			 toCol < toPixels[0].length;  
+		     fromCol++, toCol++)
+		    {
+			fromPixel = fromPixels[fromRow][fromCol];
+			toPixel = toPixels[toRow][toCol];
+			toPixel.setColor(fromPixel.getColor());
+		    }
+	    }   
+    }
 
     /** Method to create a collage of several pictures */
     public void createCollage()
@@ -369,7 +394,7 @@ public class Picture extends SimplePicture
 			    leftPixel.setColor(Color.WHITE);
 		    }
 	    }
-	//A9:1
+	/* A9:1
 	Pixel above = null;
 	Pixel below = null;
 	Pixel belowcolor = null;
@@ -378,13 +403,13 @@ public class Picture extends SimplePicture
 		above = pixels[row][col];
 		below = pixels[row+1][col];
 		belowcolor = below.getColor();
-		if ( above.colorDistance(belowcolor) > edgeDist)
+		if ( above.colorDistance(belowcolor) > edgeDist) // Broken
 		    above.setColor(Color.BLACK);
 		else
 		    above.setColor(Color.WHITE);
 	    }
-	}
-    }
+	    } */
+    } 
   
   
     /* Main method for testing - each class in Java can have a main 

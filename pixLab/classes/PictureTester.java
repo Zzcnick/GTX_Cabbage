@@ -96,6 +96,20 @@ public class PictureTester
 	canvas.createCollage();
 	canvas.explore();
     }
+    
+    /** Method to test my collage method */
+    public static void testMyCollage()
+    {
+	Picture canvas = new Picture("640x480.jpg");
+	canvas.explore();
+	Picture gull = new Picture("seagull.jpg");
+	gull.explore();
+	canvas.copy(gull, 0, 0, 0, 0, 300, 300);
+	canvas.copy(gull, 100, 100, 230, 230, 350, 350);
+	gull.mirrorHorizontal();
+	canvas.copy(gull, 250, 100, 230, 230, 350, 350);
+	canvas.explore();
+    }
   
     /** Method to test edgeDetection */
     public static void testEdgeDetection()
@@ -103,6 +117,17 @@ public class PictureTester
 	Picture swan = new Picture("swan.jpg");
 	swan.edgeDetection(10);
 	swan.explore();
+    }
+    
+    /** Method to test copy */
+    public static void testCopy()
+    {
+	Picture beach = new Picture("beach.jpg");
+	Picture swan = new Picture("swan.jpg");
+	beach.explore();
+	swan.explore();
+	beach.copy(swan, 50, 50, 60, 80, 300, 400);
+	beach.explore();
     }
   
     /** Main method for testing.  Every class can have a main
@@ -125,10 +150,11 @@ public class PictureTester
 	//testMirrorHorizontalBotToTop(); // Good
 	//testMirrorTemple(); // Good 
 	//testMirrorArms(); // Good
-	testMirrorGull();
+	//testMirrorGull(); // Good
 	//testMirrorDiagonal(); // Good
-	//testCollage();
-	//testCopy();
+	//testCollage(); // Good
+	//testMyCollage(); // Good
+	//testCopy(); // Good
 	//testEdgeDetection();
 	//testEdgeDetection2();
 	//testChromakey();
